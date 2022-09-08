@@ -1,8 +1,6 @@
 import os
 import json
 
-print("Hello!")
-
 subscription = input("Subscription: ")
 print("COPY FROM:")
 source_resource_group = input("Resource group: ")
