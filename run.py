@@ -35,9 +35,12 @@ print()
 print("Copying firewall rules to " + destination_resource_group + "/" + destination_server + "...")
 
 for rule in rules:
+    rule_name = rule["name"]
+    if len(rule_name) <= 2:
+        rule_name = rule_name + "-Copy"
     print()
     print("Copying " + rule["name"] + "...")
-    os.system("az mysql flexible-server firewall-rule create --resource-group " + destination_resource_group + " --name " + destination_server + " --rule-name " + rule["name"] + " --start-ip-address " + rule["startIpAddress"] + " --end-ip-address " + rule["endIpAddress"])
+    os.system("az mysql flexible-server firewall-rule create --resource-group " + destination_resource_group + " --name " + destination_server + " --rule-name " + rule_name + " --start-ip-address " + rule["startIpAddress"] + " --end-ip-address " + rule["endIpAddress"])
     print("Done.")
 
 print()

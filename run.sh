@@ -1,1 +1,1 @@
-docker run -it --rm -v $PWD:/root -w /root mcr.microsoft.com/azure-cli python run.py
+docker run -it --rm -v $PWD:/app -w /app mcr.microsoft.com/azure-cli python run.py
